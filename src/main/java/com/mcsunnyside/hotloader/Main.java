@@ -9,14 +9,13 @@ import java.lang.reflect.Modifier;
 import java.net.URL;
 import java.net.URLClassLoader;
 
-import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import com.mojang.authlib.HttpAuthenticationService;
 
 import moe.yushi.authlibinjector.AuthlibInjector;
 
-public class Main extends JavaPlugin implements Listener {
+public class Main extends JavaPlugin{
 	@Override
 	public void onEnable() {
 		getLogger().info("Loading Authlib-Injector Hotloader...");
@@ -25,7 +24,6 @@ public class Main extends JavaPlugin implements Listener {
 		classLoader(this.getFile(), "moe.yushi.authlibinjector.javaagent.AuthlibInjectorPremain", "start",
 				new Object[0], new Class[0]);
 		getLogger().info("Successfully loaded AuthlibInjector Hotloader.");
-		this.getServer().getPluginManager().registerEvents(this, this);
 		try {
 			Field a = com.mojang.authlib.yggdrasil.YggdrasilMinecraftSessionService.class.getDeclaredField("BASE_URL");
 			changeString(a);
