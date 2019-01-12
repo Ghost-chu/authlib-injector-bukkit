@@ -55,7 +55,7 @@
 			<artifactId>lateragent</artifactId>
 			<version>1.0</version>
 			<scope>system</scope>
-			<systemPath>${basedir}/lib/LaterAgent-all_shrunken.jar</systemPath>
+			<systemPath>${basedir}/lib/LaterAgent-Bukkit-Linux.jar</systemPath>
 		</dependency>
 	</dependencies>
 </project>
