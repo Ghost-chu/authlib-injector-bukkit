@@ -1,5 +1,5 @@
 # authlib-injector Hotload-Plugin
-This is authlib-injector hotload solution. 
+This is authlib-injector hotload solution, load the authlib-injector without JavaAgent. 
 
 Depend: LastAgent 
 
