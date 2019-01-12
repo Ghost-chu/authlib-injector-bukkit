@@ -21,6 +21,10 @@
 				<filtering>true</filtering>
 				<directory>src/main/resources</directory>
 			</resource>
+			<resource>
+				<filtering>false</filtering>
+				<directory>src/main/asm</directory>
+			</resource>
 		</resources>
 	</build>
 	<repositories>
@@ -32,9 +36,14 @@
 
 	<dependencies>
 		<dependency>
+			<groupId>org.ow2.asm</groupId>
+			<artifactId>asm</artifactId>
+			<version>7.0</version>
+		</dependency>
+		<dependency>
 			<groupId>org.spigotmc</groupId>
 			<artifactId>spigot-api</artifactId>
-			<version>1.13.2-R0.1-SNAPSHOT</version>
+			<version>1.12.2-R0.1-SNAPSHOT</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
@@ -48,7 +57,6 @@
 			<groupId>org.ow2.asm</groupId>
 			<artifactId>asm</artifactId>
 			<version>7.0</version>
-			<scope>compile</scope>
 		</dependency>
 		<dependency>
 			<groupId>cn.apisium</groupId>
