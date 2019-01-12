@@ -1,0 +1,2 @@
+api_root: "http://example.com/api/yggdrasil"
+api_root_domain: ".example.com"
