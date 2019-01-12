@@ -1,6 +1,8 @@
 # authlib-injector Hotload-Plugin
 This is authlib-injector hotload solution. 
+
 Depend: LastAgent 
+
 License: GPL-V3
 
 # Some project we use
