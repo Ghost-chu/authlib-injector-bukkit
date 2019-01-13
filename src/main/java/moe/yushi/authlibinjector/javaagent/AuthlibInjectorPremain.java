@@ -58,7 +58,7 @@ public class AuthlibInjectorPremain {
 	}
 
 	public static void start() {
-		moe.yushi.authlibinjector.javaagent.AuthlibInjectorPremain.premain("http://auth.mcsunnyside.com/api/yggdrasil",
+		moe.yushi.authlibinjector.javaagent.AuthlibInjectorPremain.premain(PROP_API_ROOT,
 				AgentApi.getInstrumentation());
 		moe.yushi.authlibinjector.javaagent.AuthlibInjectorPremain.doRetransform(AgentApi.getInstrumentation());
 	}
