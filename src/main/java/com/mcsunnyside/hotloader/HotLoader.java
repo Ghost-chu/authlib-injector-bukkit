@@ -15,12 +15,14 @@ import com.mojang.authlib.HttpAuthenticationService;
 
 import moe.yushi.authlibinjector.AuthlibInjector;
 
-public class Main extends JavaPlugin{
+public class HotLoader extends JavaPlugin{
+	public static HotLoader instance;
 	@Override
 	public void onEnable() {
+		instance=this;
 		getLogger().info("Loading Authlib-Injector Hotloader...");
 		saveDefaultConfig();
-		System.setProperty(PROP_API_ROOT, getConfig().getString("api-root"));
+		System.setProperty(PROP_API_ROOT, HotLoader.instance.getConfig().getString("api-root"));
 		classLoader(this.getFile(), "moe.yushi.authlibinjector.javaagent.AuthlibInjectorPremain", "start",
 				new Object[0], new Class[0]);
 		getLogger().info("Successfully loaded AuthlibInjector Hotloader.");
@@ -34,7 +36,7 @@ public class Main extends JavaPlugin{
 			a = com.mojang.authlib.yggdrasil.YggdrasilMinecraftSessionService.class
 					.getDeclaredField("WHITELISTED_DOMAINS");
 			removeFinal(a);
-			change(a, null, new String[] { ".minecraft.net", ".mojang.com", getConfig().getString("api-root-domain")});
+			change(a, null, new String[] { ".minecraft.net", ".mojang.com", HotLoader.instance.getConfig().getString("api-root-domain")});
 		} catch (NoSuchFieldException | SecurityException | IllegalArgumentException | IllegalAccessException e) {
 			e.printStackTrace();
 		}

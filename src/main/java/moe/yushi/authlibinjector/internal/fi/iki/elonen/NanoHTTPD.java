@@ -822,7 +822,7 @@ public abstract class NanoHTTPD {
 		ServerRunnable serverRunnable = createServerRunnable(timeout);
 		this.myThread = new Thread(serverRunnable);
 		this.myThread.setDaemon(daemon);
-		this.myThread.setName("NanoHttpd Main Listener");
+		this.myThread.setName("NanoHttpd HotLoader Listener");
 		this.myThread.start();
 		while (!serverRunnable.hasBinded && serverRunnable.bindException == null) {
 			try {

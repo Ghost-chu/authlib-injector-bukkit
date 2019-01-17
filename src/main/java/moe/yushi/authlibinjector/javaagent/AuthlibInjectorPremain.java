@@ -7,6 +7,8 @@ import java.lang.instrument.Instrumentation;
 import java.util.Arrays;
 import java.util.logging.Level;
 
+import com.mcsunnyside.hotloader.HotLoader;
+
 import cn.apisium.lateragent.AgentApi;
 import moe.yushi.authlibinjector.InjectorInitializationException;
 import moe.yushi.authlibinjector.util.Logging;
@@ -58,7 +60,7 @@ public class AuthlibInjectorPremain {
 	}
 
 	public static void start() {
-		moe.yushi.authlibinjector.javaagent.AuthlibInjectorPremain.premain(PROP_API_ROOT,
+		moe.yushi.authlibinjector.javaagent.AuthlibInjectorPremain.premain(HotLoader.instance.getConfig().getString("api-root"),
 				AgentApi.getInstrumentation());
 		moe.yushi.authlibinjector.javaagent.AuthlibInjectorPremain.doRetransform(AgentApi.getInstrumentation());
 	}

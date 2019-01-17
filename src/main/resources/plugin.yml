@@ -1,5 +1,5 @@
 name: Hotload-Authlib-Injector
 version: 1.0.0
 depend: [LaterAgent]
-main: com.mcsunnyside.hotloader.Main
+main: com.mcsunnyside.hotloader.HotLoader
 load: STARTUP
